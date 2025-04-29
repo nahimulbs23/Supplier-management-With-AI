@@ -1,0 +1,11 @@
+{
+  "Group": "Widgets",
+  "FriendlyName": "Welcome Message",
+  "SystemName": "Widgets.WelcomeMessage",
+  "Version": "1.0",
+  "SupportedVersions": [ "4.80" ],
+  "Author": "NopCommerce team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.WelcomeMessage.dll",
+  "Description": "This plugin displays a welcome message on your store"
+} 

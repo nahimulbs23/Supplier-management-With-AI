@@ -1,0 +1,11 @@
+{
+  "Group": "Misc",
+  "FriendlyName": "Supplier Manager",
+  "SystemName": "Misc.SupplierManager",
+  "Version": "4.80.3",
+  "SupportedVersions": [ "4.80" ],
+  "Author": "Your Name",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Misc.SupplierManager.dll",
+  "Description": "This plugin allows you to manage suppliers in your store"
+} 

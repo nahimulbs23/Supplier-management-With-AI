@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Language Name="English" IsDefault="true" IsRightToLeft="false">
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Suppliers">
+    <Value>Suppliers</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.AddNew">
+    <Value>Add new supplier</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Edit">
+    <Value>Edit supplier</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.BackToList">
+    <Value>Back to supplier list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Fields.Name.Required">
+    <Value>Name is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Fields.Email">
+    <Value>Email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Fields.Email.Required">
+    <Value>Email is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Fields.Email.WrongEmail">
+    <Value>Wrong email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Fields.PhoneNumber">
+    <Value>Phone number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Fields.PhoneNumber.Required">
+    <Value>Phone number is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Fields.Address">
+    <Value>Address</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Fields.Address.Required">
+    <Value>Address is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Added">
+    <Value>The supplier has been added successfully</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Updated">
+    <Value>The supplier has been updated successfully</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Misc.SupplierManager.Deleted">
+    <Value>The supplier has been deleted successfully</Value>
+  </LocaleResource>
+</Language> 
