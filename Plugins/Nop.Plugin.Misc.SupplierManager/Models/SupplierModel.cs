@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using Nop.Web.Framework.Models;
 using Nop.Web.Framework.Mvc.ModelBinding;
 
@@ -23,13 +23,5 @@ namespace Nop.Plugin.Misc.SupplierManager.Models
         [Required(ErrorMessage = "Plugins.Misc.SupplierManager.Fields.Address.Required")]
         public string Address { get; set; }
 
-        [NopResourceDisplayName("Plugins.Misc.SupplierManager.Fields.Description")]
-        public string Description { get; set; }
-
-        [NopResourceDisplayName("Plugins.Misc.SupplierManager.Fields.IsActive")]
-        public bool IsActive { get; set; }
-
-        [NopResourceDisplayName("Plugins.Misc.SupplierManager.Fields.DisplayOrder")]
-        public int DisplayOrder { get; set; }
     }
 } 

@@ -55,7 +55,7 @@ namespace Nop.Plugin.Misc.SupplierManager.Controllers
         public async Task<IActionResult> List(SupplierSearchModel searchModel)
         {
             var model = await _supplierModelFactory.PrepareSupplierListModelAsync(searchModel);
-            return View(model);
+            return Json(model);
         }
 
         public async Task<IActionResult> Create()
@@ -74,10 +74,7 @@ namespace Nop.Plugin.Misc.SupplierManager.Controllers
                     Name = model.Name,
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
-                    Address = model.Address,
-                    Description = model.Description,
-                    IsActive = model.IsActive,
-                    DisplayOrder = model.DisplayOrder
+                    Address = model.Address
                 };
 
                 await _supplierService.InsertSupplierAsync(supplier);
@@ -118,9 +115,6 @@ namespace Nop.Plugin.Misc.SupplierManager.Controllers
                 supplier.Email = model.Email;
                 supplier.PhoneNumber = model.PhoneNumber;
                 supplier.Address = model.Address;
-                supplier.Description = model.Description;
-                supplier.IsActive = model.IsActive;
-                supplier.DisplayOrder = model.DisplayOrder;
 
                 await _supplierService.UpdateSupplierAsync(supplier);
 

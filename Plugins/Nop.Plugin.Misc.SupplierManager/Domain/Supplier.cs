@@ -1,4 +1,4 @@
-using Nop.Core;
+﻿using Nop.Core;
 
 namespace Nop.Plugin.Misc.SupplierManager.Domain
 {
@@ -23,20 +23,5 @@ namespace Nop.Plugin.Misc.SupplierManager.Domain
         /// Gets or sets the supplier address
         /// </summary>
         public string Address { get; set; }
-
-        /// <summary>
-        /// Gets or sets the supplier description
-        /// </summary>
-        public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the supplier is active
-        /// </summary>
-        public bool IsActive { get; set; }
-
-        /// <summary>
-        /// Gets or sets the display order
-        /// </summary>
-        public int DisplayOrder { get; set; }
     }
 } 

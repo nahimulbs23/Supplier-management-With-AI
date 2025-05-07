@@ -1,9 +1,11 @@
-using Nop.Plugin.Misc.SupplierManager.Models;
+﻿using Nop.Plugin.Misc.SupplierManager.Models;
 using Nop.Plugin.Misc.SupplierManager.Domain;
 using Nop.Plugin.Misc.SupplierManager.Services;
 using Nop.Services.Localization;
 using Nop.Services.Media;
 using Nop.Web.Framework.Models.Extensions;
+using Nop.Web.Areas.Admin.Infrastructure.Mapper.Extensions;
+
 
 namespace Nop.Plugin.Misc.SupplierManager.Factories
 {
@@ -39,9 +41,6 @@ namespace Nop.Plugin.Misc.SupplierManager.Factories
                     model.Email = supplier.Email;
                     model.PhoneNumber = supplier.PhoneNumber;
                     model.Address = supplier.Address;
-                    model.Description = supplier.Description;
-                    model.IsActive = supplier.IsActive;
-                    model.DisplayOrder = supplier.DisplayOrder;
                 }
             }
 
@@ -50,17 +49,36 @@ namespace Nop.Plugin.Misc.SupplierManager.Factories
 
         public async Task<SupplierListModel> PrepareSupplierListModelAsync(SupplierSearchModel searchModel)
         {
+            ArgumentNullException.ThrowIfNull(searchModel);
+
+            // Get suppliers
             var suppliers = await _supplierService.GetAllSuppliersAsync(
                 name: searchModel.SearchName,
+                email: searchModel.SearchEmail,
+                phoneNumber: searchModel.SearchPhoneNumber,
+                address: searchModel.SearchAddress,
                 pageIndex: searchModel.Page - 1,
                 pageSize: searchModel.PageSize);
 
-            var model = new SupplierListModel().PrepareToGrid(searchModel, suppliers, () =>
+            // Prepare the grid model
+            var model = await new SupplierListModel().PrepareToGridAsync(searchModel, suppliers, () =>
             {
-                return suppliers.Select(supplier =>
+                return suppliers.SelectAwait(async supplier =>
                 {
-                    var supplierModel = new SupplierModel();
-                    return PrepareSupplierModelAsync(supplierModel, supplier).Result;
+                    // Manually create and populate a SupplierModel instead of using AutoMapper
+                    var supplierModel = new SupplierModel
+                    {
+                        Id = supplier.Id,
+                        Name = supplier.Name,
+                        Email = supplier.Email,
+                        PhoneNumber = supplier.PhoneNumber,
+                        Address = supplier.Address
+                        // Map any other properties that exist on both classes
+                    };
+
+                    // Add any additional properties that might need special handling
+
+                    return supplierModel;
                 });
             });
 

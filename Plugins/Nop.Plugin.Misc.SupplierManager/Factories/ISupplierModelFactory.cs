@@ -1,4 +1,4 @@
-using Nop.Plugin.Misc.SupplierManager.Models;
+﻿using Nop.Plugin.Misc.SupplierManager.Models;
 using Nop.Plugin.Misc.SupplierManager.Domain;
 
 namespace Nop.Plugin.Misc.SupplierManager.Factories
