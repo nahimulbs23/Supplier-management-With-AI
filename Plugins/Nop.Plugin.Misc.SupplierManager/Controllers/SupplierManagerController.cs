@@ -140,7 +140,7 @@ namespace Nop.Plugin.Misc.SupplierManager.Controllers
 
             await _supplierService.DeleteSupplierAsync(supplier);
 
-            _notificationService.SuccessNotification(await _localizationService.GetResourceAsync("Admin.Plugins.Deleted"));
+            _notificationService.SuccessNotification(await _localizationService.GetResourceAsync("Plugins.Misc.SupplierManager.Deleted"));
 
             return RedirectToAction("List");
         }

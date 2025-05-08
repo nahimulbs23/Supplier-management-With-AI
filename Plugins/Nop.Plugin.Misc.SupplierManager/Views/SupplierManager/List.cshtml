@@ -89,50 +89,50 @@
 				<nop-card asp-name="supplier-list" asp-icon="fas fa-list" asp-title="@T("Admin.Suppliers")" asp-hide-block-attribute-name="@hideListBlockAttributeName" asp-hide="@hideListBlock">
 					<div class="card-body">
 						@await Html.PartialAsync("Table", new DataTablesModel
+ {
+	 Name = "suppliers-grid",
+	 UrlRead = new DataUrl("List", "SupplierManager", null),
+	 SearchButtonId = "search-suppliers",
+	 Length = Model.PageSize,
+	 LengthMenu = Model.AvailablePageSizes,
+	 Filters = new List<FilterParameter>
 						{
-							Name = "suppliers-grid",
-							UrlRead = new DataUrl("List", "SupplierManager", null),
-							SearchButtonId = "search-suppliers",
-							Length = Model.PageSize,
-							LengthMenu = Model.AvailablePageSizes,
-							Filters = new List<FilterParameter>
-							{
-								new FilterParameter(nameof(Model.SearchName)),
-								new FilterParameter(nameof(Model.SearchEmail)),
-								new FilterParameter(nameof(Model.SearchPhoneNumber)),
-								new FilterParameter(nameof(Model.SearchAddress))
-							},
-							ColumnCollection = new List<ColumnProperty>
-							{
-								new ColumnProperty(nameof(SupplierModel.Name))
-								{
-									Title = T("Plugins.Misc.SupplierManager.Fields.Name").Text,
-									Width = "300"
-								},
-								new ColumnProperty(nameof(SupplierModel.Email))
-								{
-									Title = T("Plugins.Misc.SupplierManager.Fields.Email").Text,
-									Width = "300"
-								},
-								new ColumnProperty(nameof(SupplierModel.PhoneNumber))
-								{
-									Title = T("Plugins.Misc.SupplierManager.Fields.PhoneNumber").Text,
-									Width = "150"
-								},
-								new ColumnProperty(nameof(SupplierModel.Address))
-								{
-									Title = T("Plugins.Misc.SupplierManager.Fields.Address").Text,
-									Width = "300"
-								},
-								new ColumnProperty(nameof(SupplierModel.Id))
-								{
-									Title = T("Admin.Common.Edit").Text,
-									Width = "50",
-									ClassName = NopColumnClassDefaults.Button,
-									Render = new RenderButtonEdit(new DataUrl("~/Admin/SupplierManager/Edit"))
-								}
-							}
-						})
+						new FilterParameter(nameof(Model.SearchName)),
+						new FilterParameter(nameof(Model.SearchEmail)),
+						new FilterParameter(nameof(Model.SearchPhoneNumber)),
+						new FilterParameter(nameof(Model.SearchAddress))
+						},
+	 ColumnCollection = new List<ColumnProperty>
+						{
+						new ColumnProperty(nameof(SupplierModel.Name))
+						{
+						Title = T("Plugins.Misc.SupplierManager.Fields.Name").Text,
+						Width = "300"
+						},
+						new ColumnProperty(nameof(SupplierModel.Email))
+						{
+						Title = T("Plugins.Misc.SupplierManager.Fields.Email").Text,
+						Width = "300"
+						},
+						new ColumnProperty(nameof(SupplierModel.PhoneNumber))
+						{
+						Title = T("Plugins.Misc.SupplierManager.Fields.PhoneNumber").Text,
+						Width = "150"
+						},
+						new ColumnProperty(nameof(SupplierModel.Address))
+						{
+						Title = T("Plugins.Misc.SupplierManager.Fields.Address").Text,
+						Width = "300"
+						},
+						new ColumnProperty(nameof(SupplierModel.Id))
+						{
+						Title = T("Admin.Common.Edit").Text,
+						Width = "50",
+						ClassName = NopColumnClassDefaults.Button,
+						Render = new RenderButtonEdit(new DataUrl("~/Admin/SupplierManager/Edit"))
+						}
+						}
+ })
 					</div>
 				</nop-card>
 			</nop-cards>
